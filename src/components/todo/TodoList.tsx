@@ -1,9 +1,6 @@
 import { useRecoilValue } from "recoil";
-import {
-  filteredTodoListState,
-  todoListFilterState,
-  todoListState,
-} from "../../atoms/todoListState";
+import { filteredTodoListState } from "../../store/todo/selector/filteredTodoListState";
+
 import { TodoItem } from "./TodoItem";
 
 export const TodoList = () => {
