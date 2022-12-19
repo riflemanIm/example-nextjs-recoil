@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { textState } from "../atoms/textState";
+import { textState } from "../../atoms/textState";
 import { CharacterCount } from "./CharacterCount";
 
 export const CharacterCounter = () => {
