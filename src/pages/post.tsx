@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { Post } from '../components/post/Post';
 
 const PostPage = () => {
@@ -5,7 +7,9 @@ const PostPage = () => {
 
   return (
     <>
-      <Post postId={id} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Post postId={id} />
+      </Suspense>
     </>
   );
 };

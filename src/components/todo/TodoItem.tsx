@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 
 import { todoListState } from '../../store/todo/atom/todoLIstState';
 import { Todo } from '../../types/todo';
+import { deleteItemAtIndex, replaceItemAtIndex } from '../../utils/array';
 
 type Props = {
   item: Todo;
@@ -47,11 +48,3 @@ export const TodoItem = (props: Props) => {
     </>
   );
 };
-
-function replaceItemAtIndex(arr: Todo[], index: number, newValue: Todo) {
-  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
-}
-
-function deleteItemAtIndex(arr: Todo[], index: number) {
-  return [...arr.slice(0, index), ...arr.slice(index + 1)];
-}

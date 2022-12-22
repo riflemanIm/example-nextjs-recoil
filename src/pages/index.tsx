@@ -5,9 +5,6 @@ export default function Home() {
     <>
       <h1>Recoil Pages</h1>
       <div>
-        <Link href="/character">Character</Link>
-      </div>
-      <div>
         <Link href="/todo">Todo</Link>
       </div>
       <div>

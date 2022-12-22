@@ -1,9 +1,7 @@
-import { useRecoilValue } from 'recoil';
-
-import { userQuery } from '../../store/user/selector/userQuery';
+import { userSelectors } from '../../store/user/userState';
 
 export const UserInfo = () => {
-  const userInfo = useRecoilValue(userQuery);
+  const userInfo = userSelectors.useUserQuery();
 
   return <>{JSON.stringify(userInfo)}</>;
 };

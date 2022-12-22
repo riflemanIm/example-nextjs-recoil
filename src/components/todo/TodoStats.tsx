@@ -5,6 +5,7 @@ import { todoStats } from '../../store/todo/selector/todoStats';
 export const TodoStats = () => {
   const { total, completed, unCompleted, percentCompleted } =
     useRecoilValue(todoStats);
+
   return (
     <>
       <ul>

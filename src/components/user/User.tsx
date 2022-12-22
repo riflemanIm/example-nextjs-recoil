@@ -1,14 +1,13 @@
 import { FormEvent, Suspense, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useSetRecoilState } from 'recoil';
 
-import { userIdState } from '../../store/user/selector/userQuery';
+import { userActions } from '../../store/user/userState';
 import { ErrorFallback } from '../ErrorFallback';
 import { UserInfo } from './UserInfo';
 
 export const User = () => {
-  const [userId, setId] = useState<number>();
-  const setUserId = useSetRecoilState(userIdState);
+  const [userId, setId] = useState<number>(1);
+  const setUserId = userActions.useSetUserId();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
