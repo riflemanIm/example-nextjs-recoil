@@ -1,7 +1,6 @@
 import { ChangeEvent } from 'react';
-import { useRecoilState } from 'recoil';
 
-import { todoListState } from '../../store/todo/atom/todoLIstState';
+import { todoActions, todoState } from '../../store/todo/todoState';
 import { Todo } from '../../types/todo';
 import { deleteItemAtIndex, replaceItemAtIndex } from '../../utils/array';
 
@@ -10,7 +9,9 @@ type Props = {
 };
 
 export const TodoItem = (props: Props) => {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const todoList = todoState.useTodoList();
+  const setTodoList = todoActions.useSetTodoList();
+  // const [todoList, setTodoList] = useRecoilState(todoListState);
   const index = todoList.findIndex((listItem) => listItem === props.item);
 
   const editItemText = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,10 +1,8 @@
-import { useRecoilValue } from 'recoil';
-
-import { todoStats } from '../../store/todo/selector/todoStats';
+import { todoState } from '../../store/todo/todoState';
 
 export const TodoStats = () => {
   const { total, completed, unCompleted, percentCompleted } =
-    useRecoilValue(todoStats);
+    todoState.useTodoStats();
 
   return (
     <>
