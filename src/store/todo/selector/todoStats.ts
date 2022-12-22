@@ -1,8 +1,9 @@
-import { atom, selector } from "recoil";
-import { todoListState } from "../atom/todoLIstState";
+import { selector } from 'recoil';
+
+import { todoListState } from '../atom/todoLIstState';
 
 export const todoStats = selector({
-  key: "TodoStats",
+  key: 'TodoStats',
   get: ({ get }) => {
     const todoList = get(todoListState);
     const total = todoList.length;

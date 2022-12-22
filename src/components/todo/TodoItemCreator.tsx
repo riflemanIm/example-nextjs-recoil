@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { todoListState } from "../../store/todo/atom/todoLIstState";
+import { useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+
+import { todoListState } from '../../store/todo/atom/todoLIstState';
 
 export const TodoItemCreator = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const setTodoList = useSetRecoilState(todoListState);
 
   const addItem = () => {
@@ -15,7 +16,7 @@ export const TodoItemCreator = () => {
         isComplete: false,
       },
     ]);
-    setInputValue("");
+    setInputValue('');
   };
 
   return (

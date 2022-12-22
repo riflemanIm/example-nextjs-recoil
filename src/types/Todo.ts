@@ -4,4 +4,4 @@ export type Todo = {
   isComplete: boolean;
 };
 
-export type Filter = "Show All" | "Show Completed" | "Show Uncompleted";
+export type Filter = 'Show All' | 'Show Completed' | 'Show Uncompleted';

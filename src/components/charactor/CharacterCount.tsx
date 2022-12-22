@@ -1,5 +1,6 @@
-import { useRecoilValue } from "recoil";
-import { charCountState } from "../../store/atoms/charCountState";
+import { useRecoilValue } from 'recoil';
+
+import { charCountState } from '../../store/charCounter/selector/charCountState';
 
 export const CharacterCount = () => {
   const count = useRecoilValue(charCountState);
