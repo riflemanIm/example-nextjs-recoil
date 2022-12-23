@@ -11,7 +11,6 @@ type Props = {
 export const TodoItem = (props: Props) => {
   const todoList = todoState.useTodoList();
   const setTodoList = todoActions.useSetTodoList();
-  // const [todoList, setTodoList] = useRecoilState(todoListState);
   const index = todoList.findIndex((listItem) => listItem === props.item);
 
   const editItemText = (e: ChangeEvent<HTMLInputElement>) => {

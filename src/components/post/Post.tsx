@@ -1,13 +1,11 @@
-import { useRecoilValue } from 'recoil';
-
-import { postQuery } from '../../store/post/postQuery';
+import { postSelectors } from '../../store/post/postState';
 
 type Props = {
   postId: number;
 };
 
 export const Post = (props: Props) => {
-  const post = useRecoilValue(postQuery(props.postId));
+  const post = postSelectors.useGetPost(props.postId);
   return (
     <>
       <p>Post Data(ID: {props.postId})</p>

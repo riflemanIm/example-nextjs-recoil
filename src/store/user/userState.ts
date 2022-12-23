@@ -1,7 +1,7 @@
 import { atom, selector, useRecoilCallback, useRecoilValue } from 'recoil';
 
 import { getUser } from '../../api/user';
-import { User } from '../../types/user';
+import { UserScheme } from '../../types/user';
 import { RecoilKeys, RecoilSelector } from '../recoilKeys';
 
 const user = atom({
@@ -12,17 +12,13 @@ const user = atom({
 const userQuery = selector({
   key: RecoilSelector.USER_SELECTED_USER,
   get: async ({ get }) => {
-    const result = await getUser(get(user));
+    const response = await getUser(get(user));
+    const result = UserScheme.parse(response);
     return result;
   },
 });
 
-// Action
-type UserActions = {
-  useSetUserId: () => (id: number) => void;
-};
-
-export const userActions: UserActions = {
+export const userActions = {
   useSetUserId: () =>
     useRecoilCallback(
       ({ set }) =>
@@ -33,11 +29,6 @@ export const userActions: UserActions = {
     ),
 };
 
-// Selector
-type UserSelectors = {
-  useUserQuery: () => User;
-};
-
-export const userSelectors: UserSelectors = {
+export const userSelectors = {
   useUserQuery: () => useRecoilValue(userQuery),
 };
