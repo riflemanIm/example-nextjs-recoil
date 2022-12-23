@@ -20,7 +20,10 @@ export const User = () => {
       <form onSubmit={handleSubmit}>
         <label>
           User Id:
-          <input onChange={(e) => setId(Number(e.target.value))} />
+          <input
+            value={userId}
+            onChange={(e) => setId(Number(e.target.value))}
+          />
         </label>
       </form>
       <div style={{ marginTop: 8 }}>

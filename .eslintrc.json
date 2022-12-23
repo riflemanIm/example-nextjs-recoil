@@ -1,7 +1,7 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:testing-library/react",
+    "plugin:playwright/playwright-test",
     "prettier"
   ],
   "plugins": ["unused-imports", "simple-import-sort"],
