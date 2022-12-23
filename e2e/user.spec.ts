@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('ユーザ画面に遷移して、IDを入力するとユーザの名前を表示することができる', async ({
+test('ユーザ画面に遷移して、IDを入力すると指定したユーザの名前を表示することができる', async ({
   page,
 }) => {
   await page.goto('http://localhost:3000');

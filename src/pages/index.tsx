@@ -11,7 +11,7 @@ export default function Home() {
         <Link href="/user">User(Async Data Fetching)</Link>
       </div>
       <div>
-        <Link href="/post">Post(Async Data Fetching with parameters)</Link>
+        <Link href="/post/1">Post(Async Data Fetching with parameters)</Link>
       </div>
     </>
   );
