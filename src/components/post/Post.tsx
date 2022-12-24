@@ -9,7 +9,7 @@ export const Post = (props: Props) => {
   return (
     <>
       <p>Post Data(ID: {props.postId})</p>
-      {JSON.stringify(post)}
+      {post.title}
     </>
   );
 };

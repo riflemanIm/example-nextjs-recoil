@@ -1,15 +1,13 @@
-## Sample app with Recoil Data Flow
+## A Example application using Playwirght, Zod and Recoil.
 
-> Recoil + Zod + Playwright
+### Stack
 
-### 説明
+- Recoil using with [Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries).
 
-[Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries)の
+- Verify response using zod.
 
-> Recoil provides a way to map state and derived state to React components via a data-flow graph.
+- e2e testing with playwright
 
-を試すレポジトリ。ついでに Zod と Playwright も試してみた。
-
-### e2e
+### e2e Test
 
 - `yarn test:e2e`

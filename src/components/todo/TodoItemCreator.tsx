@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import { todoActions } from '../../store/todo/todoState';
 
@@ -6,7 +6,8 @@ export const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState('');
   const addTodoList = todoActions.useAddTodoList();
 
-  const addItem = () => {
+  const addItem = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     addTodoList(inputValue);
     setInputValue('');
   };
@@ -14,11 +15,16 @@ export const TodoItemCreator = () => {
   return (
     <>
       <div>
-        <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={addItem}>Add</button>
+        <form onSubmit={addItem}>
+          <label>
+            TODO:
+            <input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <button type="submit">Add</button>
+          </label>
+        </form>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <h1>Recoil Pages</h1>
+      <h1>Pages</h1>
       <div>
         <Link href="/todo">Todo</Link>
       </div>

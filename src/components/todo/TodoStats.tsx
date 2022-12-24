@@ -8,8 +8,8 @@ export const TodoStats = () => {
     <>
       <ul>
         <li>total: {total}</li>
-        <li>completed: {completed}</li>
-        <li>un completed: {unCompleted}</li>
+        <li className="completed">completed: {completed}</li>
+        <li>uncompleted: {unCompleted}</li>
         <li>Percent Completed: {percentCompleted}</li>
       </ul>
     </>

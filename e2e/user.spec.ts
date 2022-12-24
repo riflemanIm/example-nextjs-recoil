@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test';
 
+import { url } from './utils/url';
+
 test('ユーザ画面に遷移して、IDを入力すると指定したユーザの名前を表示することができる', async ({
   page,
 }) => {
-  await page.goto('http://localhost:3000');
+  await page.goto(url);
 
   const userPageLink = page.getByText('User');
 
