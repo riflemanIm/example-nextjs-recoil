@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 
 import { todoActions, todoState } from '../../store/todo/todoState';
-import { Todo } from '../../types/todo';
+import { Todo } from '../../types/Todo';
 import { deleteItemAtIndex, replaceItemAtIndex } from '../../utils/array';
 
 type Props = {

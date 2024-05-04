@@ -1,6 +1,6 @@
 import { atom, selector, useRecoilCallback, useRecoilValue } from 'recoil';
 
-import { Filter, Todo } from '../../types/todo';
+import { Filter, Todo } from '../../types/Todo';
 
 const todoListState = atom<Todo[]>({
   key: 'TodoList',
@@ -16,6 +16,7 @@ const todoStats = selector({
   key: 'TodoStats',
   get: ({ get }) => {
     const todoList = get(todoListState);
+
     const total = todoList.length;
     const completed = todoList.filter((item) => item.isComplete).length;
     const unCompleted = todoList.filter((item) => !item.isComplete).length;
@@ -33,6 +34,7 @@ const todoStats = selector({
 const filteredTodoListState = selector({
   key: 'FilteredTodoList',
   get: ({ get }) => {
+    console.log('filteredTodoListState');
     const filter = get(todoListFilterState);
     const list = get(todoListState);
 
